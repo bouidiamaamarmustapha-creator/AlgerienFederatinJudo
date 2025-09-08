@@ -150,6 +150,7 @@ const prevSlide = () => {
             <h1>Welcome to the Federation</h1>
             <p>Promoting Judo Excellence in Algeria</p>
           </section>
+          <div style={{ height: "8rem" }}></div>
           {/* ✅ INFINITE LOOP 8-SIDED CAROUSEL */}
           {/* ✅ 3D Cube Slider */}
           <section

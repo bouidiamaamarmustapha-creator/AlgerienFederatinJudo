@@ -163,9 +163,9 @@ export default function MemberListPageP() {
             <p>This is the Federation Account page.</p>
             <BackHomeButton />
             <PhotosLogoPublication />
-						 <button className="primary-btn" onClick={() => navigate("/MemberListPageP")}>
+            <button className="primary-btn" onClick={() => navigate("/MemberListPageP")}>
                   The Member List Federation
-              </button>
+            </button>
         <table className="member-table">
           <thead>
             <tr>

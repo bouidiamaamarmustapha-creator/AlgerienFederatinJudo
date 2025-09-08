@@ -82,7 +82,7 @@ import { useState, useEffect } from "react";
         setSuccess("");
 
         if (
-          !role ||
+          !selectedFederationRole ||
           !bloodType ||
           !lastName ||
           !firstName ||
@@ -111,7 +111,7 @@ import { useState, useEffect } from "react";
           first_name: firstName,
           date_of_birth: dob,
           place_of_birth: pob,
-          role,
+          role: selectedFederationRole,
           blood_type: bloodType,
           national_id_number: nid,
           password,
@@ -133,7 +133,7 @@ import { useState, useEffect } from "react";
             setNid("");
             setPassword("");
             setConfirmPassword("");
-            setRole("");
+            setSelectedFederationRole("");
             setBloodType("");
           }
         } catch (err) {

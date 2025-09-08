@@ -247,17 +247,8 @@ import { useEffect, useState } from "react";
                     role: member.role,
                   });
 
-                  navigate("/club-member-listC", {
-                    state: {
-                      club_id: club.id,
-                      club_name: club.name_club,
-                      league_id: state?.league_id,
-                      member_id: member.id, // ✅
-                      first_name: member.first_name,
-                      last_name: member.last_name,
-                      role: member.role,
-                    },
-                  });
+                  // Already on the club member list page, no need to navigate
+                  console.log("Already on club member list page");
                 } else {
                   console.log("❌ No club or member found, cannot navigate.");
                 }
@@ -280,7 +271,6 @@ import { useEffect, useState } from "react";
                       last_name: member.last_name,
                       role: member.role,
                     },
-                    state: { ...state, club: club, member: member },
                   });
                 } else {
                   console.log("❌ No club or member found, cannot navigate.");

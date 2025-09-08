@@ -278,9 +278,9 @@ export default function AddMemberClub() {
           <div className="btn-row">
             <button type="submit" className="primary-btn">Save Member</button>
             <BackHomeButton />
-						<button className="secondary-btn" onClick={() => navigate("/club-member-list")}>
+            <button className="secondary-btn" onClick={() => navigate("/club-member-list")}>
                   The Member List Add
-             </button>
+            </button>
           </div>
         </form>
 

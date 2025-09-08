@@ -92,15 +92,16 @@ export default function HomePage() {
   }, []);
 
    const nextSlide = () => {
-  setCurrentIndex((prev) => (prev + 1) % 8); // 8 faces
+  setCurrentIndex((prev) => (prev + 1) % Math.max(8, publications.length)); // 8 faces or publications length
 };
 
 const prevSlide = () => {
-  setCurrentIndex((prev) => (prev - 1 ) % 8); // wrap around
+  setCurrentIndex((prev) => (prev - 1 + Math.max(8, publications.length)) % Math.max(8, publications.length)); // wrap around
 };
       const startAutoRotate = () => {
+        if (publications.length === 0) return;
         autoRotateRef.current = setInterval(() => {
-          setCurrentIndex((prev) => (prev + 1 +20) % publications.length);
+          setCurrentIndex((prev) => (prev + 1) % Math.max(8, publications.length));
         }, 5000);
       };
 

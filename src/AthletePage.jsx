@@ -44,8 +44,8 @@ export default function AthletePage() {
   const [photoFile, setPhotoFile] = useState(null);
 
   // corrected: genres, categories, weight, weights
-  const [genres, setGenres] = useState("");
-  const [categories, setCategories] = useState("");
+  const [genres, setGenres] = useState("Men");
+  const [categories, setCategories] = useState("Seniors");
   const [weight, setWeight] = useState("");
   const [weights, setWeights] = useState([]);
 
@@ -180,11 +180,13 @@ export default function AthletePage() {
 
         if (error) {
           console.error("Erreur récupération poids:", error.message);
+          setWeights([]); // Clear weights on error
         } else {
-          setWeights(data.map((row) => row.weight));
+          setWeights(data ? data.map((row) => row.weight) : []);
         }
       } catch (err) {
         console.error("Erreur inconnue:", err);
+        setWeights([]);
       }
     };
 
@@ -292,8 +294,8 @@ export default function AthletePage() {
         setConfirmPassword("");
         setNationality("");
         setGrade("");
-        setGenres("");
-        setCategories("");
+        setGenres("Men");
+        setCategories("Seniors");
         setWeight("");
         setPhotoFile(null);
 
@@ -504,7 +506,6 @@ export default function AthletePage() {
           <label>
             Genres
             <select value={genres} onChange={(e) => setGenres(e.target.value)} required>
-              <option value="">-- Select --</option>
               <option value="Men">Men</option>
               <option value="Women">Women</option>
             </select>
@@ -513,7 +514,6 @@ export default function AthletePage() {
           <label>
             Categories
             <select value={categories} onChange={(e) => setCategories(e.target.value)} required>
-              <option value="">-- Select --</option>
               <option value="Benjamins">Benjamins</option>
               <option value="Minimes">Minimes</option>
               <option value="Cadets">Cadets</option>

@@ -272,8 +272,8 @@ import React, { useState, useEffect } from "react";
 
       useEffect(() => {
         fetchPhotos();
-        fetchPublications();
         fetchPublica();
+        fetchLogos();
       }, []);
       return (
         <>
@@ -303,7 +303,7 @@ import React, { useState, useEffect } from "react";
               <p>This is the Federation Account page.</p>
               <BackHomeButton />
               <PhotosLogoPublication />
-							 <button className="primary-btn" onClick={() => navigate("/MemberListPageP")}>
+              <button className="primary-btn" onClick={() => navigate("/MemberListPageP")}>
                   The Member List Federation
                 </button>
               <table className="member-table">

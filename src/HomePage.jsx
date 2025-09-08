@@ -222,7 +222,7 @@ const prevSlide = () => {
               </div>
             )}
           </div>
-          <div style={{ height: "8rem" }}></div>
+          <div style={{ height: "2rem" }}></div>
           <BarBoxButton />
 
           {/* NAVIGATION */}
